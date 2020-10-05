@@ -2,35 +2,32 @@
 @section('content')
 <div class="container-contact100">
     <div class="wrap-contact100">
-        <form class="contact100-form validate-form" action="" method="POST" enctype="multipart/form-data">
+        <form class=" needs-validation contact100-form" action="" method="POST" enctype="multipart/form-data" novalidate>
             <span class="contact100-form-title">
                 SELAMAT DATANG
             </span>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">Nama</span>
-                <input type="text"  class="input100"  name="nama" id="nama" placeholder="Masukan Nama">
-                <span class="focus-input100"></span>
+                <input type="text" class="input100 form-control" style="border: none" name="nama" id="nama" placeholder="Masukan Nama" required>
             </div>
             <div class="wrap-input100 input100-select">
                 <span class="label-input100 font-weight-bold">Jenis Paket</span>
                 <div>
-                    <select class="selection-2" name="jenis_paket" id="jenis_paket">
+                    <select class="selection-2 form-control" name="jenis_paket" id="jenis_paket" required>
                         <option class="fs-10" value="0">Pilih</option>
                         <option value="grab">Grab</option>
                         <option class="gojek">Gojek</option></option>
                     </select>
                 </div>
-                <span class="focus-input100"></span>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">No Plat</span>
-                <input type="text"  class="input100" name="no_plat" id="no_plat" placeholder="Masukan No Plat">
-                <span class="focus-input100"></span>
+                <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" placeholder="Masukan No Plat" required>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold mb-3">Foto</span>
                 <div class="mt-2">
-                    <input type="file" name="foto" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')"/>
+                    <input type="file" name="foto" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')" required/>
                     <label for="file" class="form-control input single-input-primary bdr-5 js-labelFile col-md-12">
                         <div class="text-center mt-2">
                             <i class="icon fa fa-image"></i>
@@ -57,7 +54,6 @@
 </div>
 <div id="dropDownSelect1"></div>
 @endsection
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 <script type="text/javascript">

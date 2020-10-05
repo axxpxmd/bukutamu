@@ -2,32 +2,24 @@
 @section('content')
 <div class="container-contact100">
     <div class="wrap-contact100">
-        <!-- Alert Errors -->
-        @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show text-center bdr-5 col-md-12 container" role="alert">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        @endif
-        <!-- Alert Errors -->
-        @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <strong>Whoops Error!</strong>&nbsp;
-            <span>You have {{ $errors->count() }} error</span>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         <form class="needs-validation contact100-form" action="{{ route('store') }}" method="POST" enctype="multipart/form-data" novalidate>
             @csrf
+            <!-- Alert Errors -->
+            @if (count($errors) > 0)
+            <div class="alert alert-danger mb-5">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>Whoops Error!</strong>&nbsp;
+                <span>You have {{ $errors->count() }} error</span>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            <img class="mx-auto d-block mt-n4 mb-3" src="{{ asset('images/logo/tangsel.png') }}" width="100" alt="">
             <span class="contact100-form-title">
                 SELAMAT DATANG
             </span>
@@ -38,10 +30,10 @@
             <div class="wrap-input100 input100-select">
                 <span class="label-input100 font-weight-bold">Jenis Paket</span>
                 <div>
-                    <select class="selection-2 form-control" name="jenis_paket" id="jenis_paket" value="{{ old('jenis_jaket') }}" id="jenis_paket" required>
-                        <option class="fs-10" value="0">Pilih</option>
-                        <option value="grab" {{ old('jenis_paket') == "grab" ? 'selected' : '' }}>Grab</option>
-                        <option class="gojek" {{ old('jenis_paket') == "gojek" ? 'selected' : '' }}>Gojek</option></option>
+                    <select class="selection-2 form-control" name="jenis_paket" id="jenis_paket" id="jenis_paket">
+                        <option class="fs-10" value="">Pilih</option>
+                        <option value="1" {{ old('jenis_paket') == 1 ? 'selected' : '' }}>Grab</option>
+                        <option value="2" {{ old('jenis_paket') == 2 ? 'selected' : '' }}>Gojek</option></option>
                     </select>
                 </div>
             </div>
@@ -50,17 +42,25 @@
                 <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" value="{{ old('no_plat') }}" placeholder="Masukan No Plat" required>
             </div>
             <div class="wrap-input100 validate-input">
+                <span class="label-input100 font-weight-bold">Tanggal</span>
+                <input type="text" class="input100 form-control" style="border: none" name="tanggal" readonly="readonly" value="{{ $tanggal }}">
+            </div>
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100 font-weight-bold">Jam</span>
+                <input type="text" class="input100 form-control" style="border: none" name="jam" readonly="readonly" value="{{ $jam }}">
+            </div>
+            <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold mb-3">Foto</span>
-                <div class="mt-2">
-                    <input type="file" name="foto" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')" required/>
-                    <label for="file" class="form-control input single-input-primary bdr-5 js-labelFile col-md-12">
+                <div class="mt-2 text-center">
+                    <input type="file" name="foto" id="file" class="input-file" onchange="tampilkanPreview(this,'preview')"/>
+                    <label for="file" class="form-control bdr-5 js-labelFile col-md-12">
                         <div class="text-center mt-2">
                             <i class="icon fa fa-image"></i>
                             <span class="js-fileName fs-12">Pilih File</span>
                         </div>
                     </label>
                     <img class="rounded-circle img-circular mb-2 mx-auto d-block" id="preview" width="100" height="100"/>
-                    <i class="fs-12 ">Maksimal 1 Mb (JPEG, JPG, PNG)</i>
+                    <i class="fs-11">Maksimal File 1 Mb (JPEG, JPG, PNG)</i>
                 </div>
             </div>
             <div class="container-contact100-form-btn">

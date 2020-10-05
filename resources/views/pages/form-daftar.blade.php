@@ -33,21 +33,21 @@
             </span>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">Nama</span>
-                <input type="text" class="input100 form-control" style="border: none" name="nama" id="nama" placeholder="Masukan Nama" required>
+                <input type="text" class="input100 form-control" style="border: none" name="nama" id="nama" placeholder="Masukan Nama" value="{{ old('nama') }}" required>
             </div>
             <div class="wrap-input100 input100-select">
                 <span class="label-input100 font-weight-bold">Jenis Paket</span>
                 <div>
-                    <select class="selection-2 form-control" name="jenis_paket" id="jenis_paket" required>
+                    <select class="selection-2 form-control" name="jenis_paket" id="jenis_paket" value="{{ old('jenis_jaket') }}" id="jenis_paket" required>
                         <option class="fs-10" value="0">Pilih</option>
-                        <option value="grab">Grab</option>
-                        <option class="gojek">Gojek</option></option>
+                        <option value="grab" {{ old('jenis_paket') == "grab" ? 'selected' : '' }}>Grab</option>
+                        <option class="gojek" {{ old('jenis_paket') == "gojek" ? 'selected' : '' }}>Gojek</option></option>
                     </select>
                 </div>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">No Plat</span>
-                <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" placeholder="Masukan No Plat" required>
+                <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" value="{{ old('no_plat') }}" placeholder="Masukan No Plat" required>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold mb-3">Foto</span>

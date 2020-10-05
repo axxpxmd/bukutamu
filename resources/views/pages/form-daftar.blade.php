@@ -39,7 +39,7 @@
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">No Plat</span>
-                <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" value="{{ old('no_plat') }}" placeholder="Masukan No Plat" required>
+                <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" value="{{ old('no_plat') }}" placeholder="A 1234 AA" required>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">Tanggal</span>
@@ -60,7 +60,6 @@
                         </div>
                     </label>
                     <img class="rounded-circle img-circular mb-2 mx-auto d-block" id="preview" width="100" height="100"/>
-                    <i class="fs-11">Maksimal File 1 Mb (JPEG, JPG, PNG)</i>
                 </div>
             </div>
             <div class="container-contact100-form-btn">

@@ -30,7 +30,7 @@ class BukuTamuController extends Controller
             'nama'        => 'required|max:50',
             'jenis_paket' => 'required',
             'no_plat' => 'required|max:15',
-            'foto'    => 'required|image|mimes:png,jpg,jpeg|max:1024'
+            'foto'    => 'required|image|mimes:png,jpg,jpeg'
         ]);
 
         $nama = $request->nama;

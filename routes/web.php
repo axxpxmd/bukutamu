@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.form-daftar');
-});
+Route::get('/', 'BukuTamuController@index');
+Route::post('/store', 'BukuTamuController@store')->name('store');
+Route::get('/cetak-data/{nama}', 'BukuTamuController@cetakData')->name('cetak-data');
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

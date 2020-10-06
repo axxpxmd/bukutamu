@@ -1,16 +1,48 @@
-@extends('layouts.app')
-@section('content')
-<div class="row justify-content-center">
-    <div class="col-4">
-        <div class="card mt-5">
-            <div class="car-body p-3">
-                <img class="mx-auto d-block" src="{{ asset('images/logo/tangsel.png') }}" width="150" alt="">
-                <div class="text-center mt-2">
-                    <p class="fs-30 font-weight-bold text-black">{{ $result->id_registrasi }}</p>
-                </div>
-                <div></div>
-            </div>
-        </div>
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        th, td {
+            padding: 10px;
+        }
+        .fs-20{
+            font-size: 20px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mt-5">
+        <img class="mb-3" style="margin-left: 37% !important" src="{{ asset('images/logo/tangsel.png') }}" width="100" alt="">
+        <span class="font-weight-bold fs-20">Dinas Kependudukan dan Catatan Sipil</span>
+        <p class="font-weight-bold text-center">BUKTI REGISTRASI</p>
+        <table border="1" align="center" width="500px">
+            <thead>
+                <tr class="text-center">
+                    <th colspan="2">
+                        ID REGISTRASI
+                        <p class="mb-1">{{ $result->id_registrasi }}</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Nama</th>
+                    <th>No Plat</th>
+                </tr>
+            </thead>
+        </table>
     </div>
-  </div>
-@endsection
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>

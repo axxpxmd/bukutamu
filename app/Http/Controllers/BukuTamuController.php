@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -35,6 +36,7 @@ class BukuTamuController extends Controller
 
         $nama = $request->nama;
         $jenis_paket = $request->jenis_paket;
+        $penerima    = $request->penerima;
         $no_plat     = $request->no_plat;
         $tanggal     = $request->tanggal;
         $jam         = $request->jam;
@@ -49,11 +51,15 @@ class BukuTamuController extends Controller
         if ($count != 0) {
             $result = $count + 1;
         } else {
-            $result = '01';
+            $result = '1';
         }
         if (\strlen($result) == 1) {
-            $digit4 = 0 . $result;
-        } else {
+            $digit4 = '000' . $result;
+        } elseif (\strlen($result) == 2) {
+            $digit4 = '00' . $result;
+        } elseif (\strlen($result) == 3) {
+            $digit4 = '0' . $result;
+        } elseif (\strlen($result) == 4) {
             $digit4 = $result;
         }
         $id_registrasi = $digit1 . $digit2 . $digit3 . $digit4;
@@ -66,20 +72,23 @@ class BukuTamuController extends Controller
         $bukuTamu->nama = $nama;
         $bukuTamu->jenis_paket   = $jenis_paket;
         $bukuTamu->id_registrasi = $id_registrasi;
+        $bukuTamu->penerima      = $penerima;
         $bukuTamu->no_plat = $no_plat;
         $bukuTamu->foto    = $fileName;
         $bukuTamu->tanggal = $tanggal;
         $bukuTamu->jam     = $jam;
         $bukuTamu->save();
 
-        $getLatedId = BukuTamu::select('id')->latest()->first();
-
-        return redirect()->route('cetak-data', $getLatedId);
+        return redirect()->route('cetak-data', $id_registrasi);
     }
 
-    public function cetakData($id)
+    public function cetakData($id_registrasi)
     {
-        $result = BukuTamu::where('id', $id)->first();
+        $result = BukuTamu::where('id_registrasi', $id_registrasi)->first();
+
+        // $pdf = PDF::loadview('pages.cetak-data', compact('result'))->setPaper('a4', 'portrait');
+        // return $pdf->stream();
+
         return view('pages.cetak-data', compact('result'));
     }
 }

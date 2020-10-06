@@ -28,7 +28,7 @@
                 <input type="text" class="input100 form-control" style="border: none" name="nama" id="nama" placeholder="Masukan Nama" value="{{ old('nama') }}" required>
             </div>
             <div class="wrap-input100 input100-select">
-                <span class="label-input100 font-weight-bold">Jenis Paket</span>
+                <span class="label-input100 font-weight-bold">Jenis Jasa</span>
                 <div>
                     <select class="selection-2 form-control" name="jenis_paket" id="jenis_paket" id="jenis_paket">
                         <option class="fs-10" value="">Pilih</option>
@@ -40,6 +40,10 @@
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">No Plat</span>
                 <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" value="{{ old('no_plat') }}" placeholder="A 1234 AA" required>
+            </div>
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100 font-weight-bold">Penerima</span>
+                <input type="text" class="input100 form-control" style="border: none" name="penerima" id="penerima" placeholder="Masukan Nama Penerima" value="{{ old('nama') }}" required>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">Tanggal</span>
@@ -72,6 +76,9 @@
                         </span>
                     </button>
                 </div>
+            </div>
+            <div class="text-center mt-3 mb-n4">
+                <a href="">Cari ID Registrasi</a><i class="fa fa-search ml-2"></i>
             </div>
         </form>
     </div>

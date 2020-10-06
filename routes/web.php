@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'BukuTamuController@index');
 Route::post('/store', 'BukuTamuController@store')->name('store');
-Route::get('/cetak-data/{id}', 'BukuTamuController@cetakData')->name('cetak-data');
+Route::get('/cetak-data/{id_registrasi}', 'BukuTamuController@cetakData')->name('cetak-data');
 
 
 Auth::routes();

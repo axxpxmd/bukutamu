@@ -86,9 +86,9 @@ class BukuTamuController extends Controller
     {
         $result = BukuTamu::where('id_registrasi', $id_registrasi)->first();
 
-        // $pdf = PDF::loadview('pages.cetak-data', compact('result'))->setPaper('a4', 'portrait');
-        // return $pdf->stream();
+        $pdf = PDF::loadview('pages.cetak-data', compact('result'))->setPaper('a4', 'portrait');
+        return $pdf->stream();
 
-        return view('pages.cetak-data', compact('result'));
+        // return view('pages.cetak-data', compact('result'));
     }
 }

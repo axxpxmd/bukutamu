@@ -41,7 +41,7 @@
         <p class="font-weight-bold fs-20 mt-n3">Jenis Jasa : <span class="text-uppercase">{{ $result->jenis_paket == 1 ? 'GRAB' : 'GOJEK' }}</span></p>
         <p class="font-weight-bold fs-20 mt-n3">Penerima : <span class="text-uppercase">{{ $result->penerima }}</span></p>
         <p class="fs-20 font-weight-bold">Tanggal :</p>
-        <p class="fs-20 font-weight-bold mt-n3">{{ $result->tanggal }}</p>
+        <p class="fs-20 font-weight-bold mt-n3">{{ $result->tanggal->isoFormat('D MMMM Y') }}</p>
         <p class="fs-20 font-weight-bold">Jam</p>
         <p class="fs-20 font-weight-bold mt-n3">{{ $result->jam }}</p>
         <p class="fs-15 font-weight-bold">Alamat</p>

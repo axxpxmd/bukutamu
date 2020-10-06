@@ -62,7 +62,7 @@ class BukuTamuController extends Controller
         } elseif (\strlen($result) == 4) {
             $digit4 = $result;
         }
-        $id_registrasi = $digit1 . $digit2 . $digit3 . $digit4;
+        $id_registrasi = $digit1 . '-' . $digit2 . '-' . $digit3 . '-' . $digit4;
 
         $file     = $request->file('foto');
         $fileName = time() . "." . $file->getClientOriginalName();

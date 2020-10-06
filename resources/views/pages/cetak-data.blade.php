@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, world!</title>
+    <link rel="icon" href="{{ asset('images/logo/tangsel.png') }}" type="image/x-icon">
+    <title>DISDUKCAPIL TANGERANG SELATAN</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -15,28 +16,38 @@
         .fs-20{
             font-size: 20px
         }
+        .fs-15{
+            font-size: 15px
+        }
+        .fs-25{
+            font-size: 25px
+        }
+        .fs-30{
+            font-size: 45px
+        }
     </style>
 </head>
 
 <body>
-    <div class="mt-5">
-        <img class="mb-3" style="margin-left: 37% !important" src="{{ asset('images/logo/tangsel.png') }}" width="100" alt="">
-        <span class="font-weight-bold fs-20">Dinas Kependudukan dan Catatan Sipil</span>
-        <p class="font-weight-bold text-center">BUKTI REGISTRASI</p>
-        <table border="1" align="center" width="500px">
-            <thead>
-                <tr class="text-center">
-                    <th colspan="2">
-                        ID REGISTRASI
-                        <p class="mb-1">{{ $result->id_registrasi }}</p>
-                    </th>
-                </tr>
-                <tr>
-                    <th>Nama</th>
-                    <th>No Plat</th>
-                </tr>
-            </thead>
-        </table>
+    <div class="mt-5 text-center">
+        <img class="mb-3" src="{{ asset('images/logo/tangsel.png') }}" width="100" alt="">
+        <p class="fs-25 font-weight-bold">Dinas Kependudukan dan Catatan Sipil</p>
+        <p class="fs-25 font-weight-bold mt-n4">Kota Tangerang Selatan</p>
+        <p class="font-weight-bold fs-20">ID REGISTRASI</p>
+        <p class="mt-n3 font-weight-bold fs-20">{{ $result->id_registrasi }}</p>
+        <p class=" mt-n3 font-weight-bold fs-30">{{ substr($result->id_registrasi,9) }}</p>
+        <p class="font-weight-bold fs-20">Nama : <span class="text-uppercase">{{ $result->nama }}</span></p>
+        <p class="font-weight-bold fs-20 mt-n3">No Plat : <span class="text-uppercase">{{ $result->no_plat }}</span></p>
+        <p class="font-weight-bold fs-20 mt-n3">Jenis Jasa : <span class="text-uppercase">{{ $result->jenis_paket == 1 ? 'GRAB' : 'GOJEK' }}</span></p>
+        <p class="font-weight-bold fs-20 mt-n3">Penerima : <span class="text-uppercase">{{ $result->penerima }}</span></p>
+        <p class="fs-20 font-weight-bold">Tanggal :</p>
+        <p class="fs-20 font-weight-bold mt-n3">{{ $result->tanggal }}</p>
+        <p class="fs-20 font-weight-bold">Jam</p>
+        <p class="fs-20 font-weight-bold mt-n3">{{ $result->jam }}</p>
+        <p class="fs-15 font-weight-bold">Alamat</p>
+        <p class="fs-15 mt-n3">Jl. Raya Serpong No.KM. 16, Cilenggang, Kec. Serpong Utara, </p>
+        <p class="fs-15 mt-n3">Kota Tangerang Selatan, Banten 15310</p>
+        <p class="fs-15 mt-n3">(021) 5370296</p>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

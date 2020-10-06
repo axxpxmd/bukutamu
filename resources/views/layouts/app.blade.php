@@ -9,7 +9,7 @@
 
     <!-- Title -->
     <link rel="icon" href="{{ asset('images/logo/tangsel.png') }}" type="image/x-icon">
-    <title>{{ config('app.name') }}</title>
+    <title>DISDUKCAPIL TANGERANG SELATAN</title>
 
     <!-- CSS -->
     @yield('css')

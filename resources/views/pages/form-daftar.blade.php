@@ -24,8 +24,8 @@
                 SELAMAT DATANG
             </span>
             <div class="wrap-input100 validate-input">
-                <span class="label-input100 font-weight-bold">Nama</span>
-                <input type="text" class="input100 form-control" style="border: none" name="nama" id="nama" placeholder="Masukan Nama" value="{{ old('nama') }}" required>
+                <span class="label-input100 font-weight-bold">Nama Driver</span>
+                <input type="text" class="input100 form-control" style="border: none" name="nama" id="nama" placeholder="Masukan Nama Driver" value="{{ old('nama') }}" required>
             </div>
             <div class="wrap-input100 input100-select">
                 <span class="label-input100 font-weight-bold">Jenis Jasa</span>
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="text-center mt-3 mb-n4">
-                <a href="">Cari ID Registrasi</a><i class="fa fa-search ml-2"></i>
+                <a href="{{ route('cariId') }}">Cari ID Registrasi</a><i class="fa fa-search ml-2"></i>
             </div>
         </form>
     </div>

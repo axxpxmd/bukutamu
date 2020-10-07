@@ -5,7 +5,7 @@
         <table class="table">
             <tbody>
                 <tr>
-                    <th scope="row"><a href="{{ route('cetak-data',$bukuTamu->id_registrasi) }}">{{ $bukuTamu->id_registrasi }}</a></th>
+                    <th scope="row"><a class="text-primary" href="{{ route('cetak-data',$bukuTamu->id_registrasi) }}">{{ $bukuTamu->id_registrasi }}</a></th>
                     <td>{{ $bukuTamu->nama }}</td>
                 </tr>
             </tbody>

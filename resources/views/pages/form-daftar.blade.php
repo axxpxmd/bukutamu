@@ -21,8 +21,9 @@
             @endif
             <img class="mx-auto d-block mt-n4 mb-3" src="{{ asset('images/logo/tangsel.png') }}" width="100" alt="">
             <span class="contact100-form-title">
-                SELAMAT DATANG
+                SIANDUK
             </span>
+            <span class="contact100-form-title fs-16 mt-n4">Sistem Pengiriman Dokumen Kependudukan</span>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">Nama Driver</span>
                 <input type="text" class="input100 form-control" style="border: none" name="nama" id="nama" placeholder="Masukan Nama Driver" value="{{ old('nama') }}" required>
@@ -30,10 +31,20 @@
             <div class="wrap-input100 input100-select">
                 <span class="label-input100 font-weight-bold">Jenis Jasa</span>
                 <div>
-                    <select class="selection-2 form-control" name="jenis_paket" id="jenis_paket" id="jenis_paket">
+                    <select class="selection-2 form-control" name="jenis_paket" id="jenis_paket">
                         <option class="fs-10" value="">Pilih</option>
                         <option value="1" {{ old('jenis_paket') == 1 ? 'selected' : '' }}>Grab</option>
                         <option value="2" {{ old('jenis_paket') == 2 ? 'selected' : '' }}>Gojek</option></option>
+                    </select>
+                </div>
+            </div>
+            <div class="wrap-input100 input100-select">
+                <span class="label-input100 font-weight-bold">Tujuan</span>
+                <div>
+                    <select class="selection-2 form-control" name="tujuan" id="tujuan">
+                        <option class="fs-10" value="">Pilih</option>
+                        <option value="1" {{ old('tujuan') == 1 ? 'selected' : '' }}>Mengambil</option>
+                        <option value="2" {{ old('tujuan') == 2 ? 'selected' : '' }}>Mengirim</option></option>
                     </select>
                 </div>
             </div>

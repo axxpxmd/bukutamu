@@ -12,6 +12,7 @@ use App\Models\BukuTamu;
 class BukuTamuController extends Controller
 {
     protected $path  = 'ava/';
+    protected $view  = 'pages.';
 
     public function index()
     {
@@ -19,7 +20,7 @@ class BukuTamuController extends Controller
         $tanggal = $time->toDateString();
         $jam     = $time->toTimeString();
 
-        return view('pages.form-daftar', compact(
+        return view($this->view . 'form-daftar', compact(
             'tanggal',
             'jam'
         ));
@@ -39,6 +40,7 @@ class BukuTamuController extends Controller
         $penerima    = $request->penerima;
         $no_plat     = $request->no_plat;
         $tanggal     = $request->tanggal;
+        $tujuan      = $request->tujuan;
         $jam         = $request->jam;
 
         /**
@@ -76,6 +78,7 @@ class BukuTamuController extends Controller
         $bukuTamu->no_plat = $no_plat;
         $bukuTamu->foto    = $fileName;
         $bukuTamu->tanggal = $tanggal;
+        $bukuTamu->tujuan  = $tujuan;
         $bukuTamu->jam     = $jam;
         $bukuTamu->save();
 
@@ -89,7 +92,7 @@ class BukuTamuController extends Controller
         // $pdf = PDF::loadview('pages.cetak-data', compact('result'))->setPaper('a4', 'portrait');
         // return $pdf->stream();
 
-        return view('pages.cetak-data', compact('result'));
+        return view($this->view . 'cetak-data', compact('result'));
     }
 
     public function cariId()
@@ -100,10 +103,11 @@ class BukuTamuController extends Controller
     public function getId(Request $request)
     {
         $bukuTamu = BukuTamu::where('id_registrasi', $request->id_registrasi)->first();
+
         if ($bukuTamu == null) {
             return view('pages.notFound', compact('bukuTamu'));
         } else {
-            return view('pages.hasil-cari', compact('bukuTamu'));
+            return view($this->view . 'hasil-cari', compact('bukuTamu'));
         }
     }
 }

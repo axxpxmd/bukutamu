@@ -23,7 +23,7 @@
             <span class="contact100-form-title">
                 SIANDUK
             </span>
-            <span class="contact100-form-title fs-16 mt-n4">Sistem Pengiriman Dokumen Kependudukan</span>
+            <span class="contact100-form-title fs-16" style="margin-top: -35px">Sistem Pengiriman Dokumen Kependudukan</span>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">Nama Driver</span>
                 <input type="text" class="input100 form-control" style="border: none" name="nama" id="nama" placeholder="Masukan Nama Driver" value="{{ old('nama') }}" required>

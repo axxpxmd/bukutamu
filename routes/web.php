@@ -19,6 +19,5 @@ Route::get('/cetak-data/{id_registrasi}', 'BukuTamuController@cetakData')->name(
 Route::get('/cari', 'BukuTamuController@cariId')->name('cariId');
 Route::post('/getId', 'BukuTamuController@getId')->name('getId');
 
-
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');

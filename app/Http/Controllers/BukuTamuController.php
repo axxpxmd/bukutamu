@@ -31,8 +31,12 @@ class BukuTamuController extends Controller
         $request->validate([
             'nama'        => 'required|max:50',
             'jenis_paket' => 'required',
+            'tujuan'  => 'required',
             'no_plat' => 'required|max:15',
-            'foto'    => 'required|image|mimes:png,jpg,jpeg'
+            'no_telp' => 'required',
+            'pemesan' => 'required|max:50',
+            'penerima' => 'required|max:50',
+            'foto'     => 'required|image|mimes:png,jpg,jpeg|max:5000'
         ]);
 
         $nama = $request->nama;
@@ -42,6 +46,8 @@ class BukuTamuController extends Controller
         $tanggal     = $request->tanggal;
         $tujuan      = $request->tujuan;
         $jam         = $request->jam;
+        $pemesan     = $request->pemesan;
+        $no_telp     = $request->no_telp;
 
         /**
          * Generete id_registrasi (tanggal, bulan, jenis paket, urutan by jenis paket)
@@ -75,6 +81,8 @@ class BukuTamuController extends Controller
         $bukuTamu->jenis_paket   = $jenis_paket;
         $bukuTamu->id_registrasi = $id_registrasi;
         $bukuTamu->penerima      = $penerima;
+        $bukuTamu->pemesan       = $pemesan;
+        $bukuTamu->no_telp       = $no_telp;
         $bukuTamu->no_plat = $no_plat;
         $bukuTamu->foto    = $fileName;
         $bukuTamu->tanggal = $tanggal;

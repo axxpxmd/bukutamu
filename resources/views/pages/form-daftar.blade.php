@@ -58,11 +58,11 @@
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">No Plat</span>
-                <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" value="{{ old('no_plat') }}" placeholder="A 1234 AA" required>
+                <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" value="{{ old('no_plat') }}" placeholder="B 1234 AA" required>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">Petugas</span>
-                <input type="text" class="input100 form-control" style="border: none" name="penerima" id="penerima" placeholder="Masukan Nama Petugas" value="{{ old('penerima') }}" required>
+                <input type="text" class="input100 form-control" style="border: none" name="penerima" id="penerima" placeholder="Masukan Nama Petugas Disdukcapil" value="{{ old('penerima') }}" required>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">Pemesan</span>

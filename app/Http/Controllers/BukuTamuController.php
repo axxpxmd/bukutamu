@@ -48,6 +48,7 @@ class BukuTamuController extends Controller
         $jam         = $request->jam;
         $pemesan     = $request->pemesan;
         $no_telp     = $request->no_telp;
+        $no_telp_pemesan = $request->no_telp_pemesan;
 
         /**
          * Generete id_registrasi (tanggal, bulan, jenis paket, urutan by jenis paket)
@@ -83,6 +84,7 @@ class BukuTamuController extends Controller
         $bukuTamu->penerima      = $penerima;
         $bukuTamu->pemesan       = $pemesan;
         $bukuTamu->no_telp       = $no_telp;
+        $bukuTamu->no_telp_pemesan = $no_telp_pemesan;
         $bukuTamu->no_plat = $no_plat;
         $bukuTamu->foto    = $fileName;
         $bukuTamu->tanggal = $tanggal;

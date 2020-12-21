@@ -49,8 +49,12 @@
                 </div>
             </div>
             <div class="wrap-input100 validate-input">
-                <span class="label-input100 font-weight-bold">No Telp</span>
+                <span class="label-input100 font-weight-bold">No Telp Driver</span>
                 <input type="text" class="input100 form-control" style="border: none" name="no_telp" id="no_telp" value="{{ old('no_telp') }}" placeholder="08xxxxxxxxxx" required>
+            </div>
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100 font-weight-bold">No Telp Pemesan</span>
+                <input type="text" class="input100 form-control" style="border: none" name="no_telp_pemesan" id="no_telp_pemesan" value="{{ old('no_telp_pemesan') }}" placeholder="08xxxxxxxxxx" required>
             </div>
             <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">No Plat</span>

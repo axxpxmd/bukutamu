@@ -38,9 +38,12 @@
         <p class=" mt-n3 font-weight-bold fs-30">{{ substr($result->id_registrasi,9) }}</p>
         <p class="font-weight-bold fs-20">Nama : <span class="text-uppercase">{{ $result->nama }}</span></p>
         <p class="font-weight-bold fs-20 mt-n3">No Plat : <span class="text-uppercase">{{ $result->no_plat }}</span></p>
+        <p class="font-weight-bold fs-20 mt-n3">No Telp Driver : <span class="text-uppercase">{{ $result->no_telp }}</span></p>
         <p class="font-weight-bold fs-20 mt-n3">Jenis Jasa : <span class="text-uppercase">{{ $result->jenis_paket == 1 ? 'GRAB' : 'GOJEK' }}</span></p>
         <p class="font-weight-bold fs-20 mt-n3">Tujuan : <span class="text-uppercase">{{ $result->tujuan == 1 ? 'Mengambil' : 'Mengirim' }}</span></p>
-        <p class="font-weight-bold fs-20 mt-n3">Penerima : <span class="text-uppercase">{{ $result->penerima }}</span></p>
+        <p class="font-weight-bold fs-20 mt-n3">Petugas Disdukcapil : <span class="text-uppercase">{{ $result->penerima }}</span></p>
+        <p class="font-weight-bold fs-20 mt-n3">Pemesan : <span class="text-uppercase">{{ $result->pemesan }}</span></p>
+        <p class="font-weight-bold fs-20 mt-n3">No Telp Pemesan : <span class="text-uppercase">{{ $result->no_telp_pemesan }}</span></p>
         <p class="fs-20 font-weight-bold">Tanggal :</p>
         <p class="fs-20 font-weight-bold mt-n3">{{ Carbon\Carbon::parse($result->tanggal)->isoFormat('D-MMM-Y') }}</p>
         <p class="fs-20 font-weight-bold">Jam</p>

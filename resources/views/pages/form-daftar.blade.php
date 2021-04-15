@@ -53,10 +53,6 @@
                 <input type="text" class="input100 form-control" style="border: none" name="no_telp" id="no_telp" value="{{ old('no_telp') }}" placeholder="08xxxxxxxxxx" required>
             </div>
             <div class="wrap-input100 validate-input">
-                <span class="label-input100 font-weight-bold">No Telp Pemesan</span>
-                <input type="text" class="input100 form-control" style="border: none" name="no_telp_pemesan" id="no_telp_pemesan" value="{{ old('no_telp_pemesan') }}" placeholder="08xxxxxxxxxx" required>
-            </div>
-            <div class="wrap-input100 validate-input">
                 <span class="label-input100 font-weight-bold">No Plat</span>
                 <input type="text" class="input100 form-control" style="border: none" name="no_plat" id="no_plat" value="{{ old('no_plat') }}" placeholder="B 1234 AA" required>
             </div>
@@ -83,7 +79,7 @@
                     <label for="file" class="form-control bdr-5 js-labelFile col-md-12">
                         <div class="text-center mt-2">
                             <i class="icon fa fa-image"></i>
-                            <span class="js-fileName fs-12">Pilih File</span>
+                            <span class="js-fileName fs-12">Kamera Selfie</span>
                         </div>
                     </label>
                     <img class="rounded-circle img-circular mb-2 mx-auto d-block" id="preview" width="100" height="100"/>

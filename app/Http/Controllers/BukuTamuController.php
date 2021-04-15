@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use PDF;
+
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -50,13 +50,18 @@ class BukuTamuController extends Controller
         $no_telp     = $request->no_telp;
         $no_telp_pemesan = $request->no_telp_pemesan;
 
+        // get Today
+        $time = Carbon::now();
+        $today = $time->toDateString();
+
         /**
          * Generete id_registrasi (tanggal, bulan, jenis paket, urutan by jenis paket)
          */
         $digit1 = substr($tanggal, 8);
         $digit2 = substr($tanggal, 5, -3);
         $digit3 = 0 . $jenis_paket;
-        $count  = BukuTamu::where('jenis_paket', $jenis_paket)->count();
+        $count  = BukuTamu::where('jenis_paket', $jenis_paket)->where('tanggal', $today)->count();
+
         if ($count != 0) {
             $result = $count + 1;
         } else {

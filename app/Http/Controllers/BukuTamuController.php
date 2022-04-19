@@ -102,7 +102,7 @@ class BukuTamuController extends Controller
 
     public function cetakData($id_registrasi)
     {
-        $result = BukuTamu::where('id_registrasi', $id_registrasi)->first();
+        $result = BukuTamu::where('id_registrasi', $id_registrasi)->latest()->first();
 
         // $pdf = PDF::loadview('pages.cetak-data', compact('result'))->setPaper('a4', 'portrait');
         // return $pdf->stream();

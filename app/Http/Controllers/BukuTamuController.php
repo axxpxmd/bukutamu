@@ -37,6 +37,8 @@ class BukuTamuController extends Controller
             'pemesan' => 'required|max:50',
             'penerima' => 'required|max:50',
             'foto'     => 'required|image|mimes:png,jpg,jpeg|max:5000'
+        ], [
+            'foto.required' => 'foto wajib diisi.'
         ]);
 
         $nama = $request->nama;
